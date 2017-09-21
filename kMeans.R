@@ -104,7 +104,9 @@ Delta <- function(oldMeans,newMeans){
 # This function computes R^2 in order to evaluate the cluster result. This r2 value is interpreted as 
 # the proportion of variation explained by a particular clustering of the observations.
 ComputeRsquare <- function (x,cls,ks){
+  # Data set's features normaliziation
   x  <- (x-min(x))/(max(x)-min(x))
+  # Centroid's features normaliziation
   ks <- (ks-min(x))/(max(x)-min(x))
   ESS <- 0
   TSS <- 0
