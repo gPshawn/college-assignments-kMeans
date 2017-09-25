@@ -30,7 +30,7 @@ BreastCancerWinsconsin <- function(BreastCancer, trainRatio){
   PosterioriBenign <- dens(modelName=modelBenign$modelName, data = X$inputsTest, parameters = modelBenign$parameters)
   PosterioriMalignant <- dens(modelName=modelMalignant$modelName, data = X$inputsTest, parameters = modelMalignant$parameters)
   
-  # checing which class has the higher posterior probability 
+  # checking which class has the higher posterior probability 
   predictions <- array(length(PosterioriBenign))
   for (i in 1:length(PosterioriBenign)){
     if (PosterioriBenign[i]>PosterioriMalignant[i]) predictions[i]<-1
